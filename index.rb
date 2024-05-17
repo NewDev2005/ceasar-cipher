@@ -3,7 +3,7 @@ def ceasar_cipher(str,key)
     str_to_arr = str_lowercase.split(" ")
     multiDimensional_arr = str_to_arr.map {|chr_to_ascii| chr_to_ascii.bytes.map do|ascii| 
         if (ascii + key) > 122
-            (ascii + key) - 122 + 96
+            (ascii + key) - ("z".ord) + ("`".ord)
         else
             ascii + key
         end
@@ -12,5 +12,5 @@ def ceasar_cipher(str,key)
     return cipher_str
 end
 
- string = ceasar_cipher("Hey mike is gay", 5)
+ string = ceasar_cipher("what", 5)
  puts string
